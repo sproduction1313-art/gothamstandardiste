@@ -1,0 +1,11 @@
+{
+  "name": "gothamstandardiste",
+  "version": "1.0.0",
+  "description": "Génération automatique de products.json à partir des fichiers .md",
+  "scripts": {
+    "generate-products": "node generate-products-json.js",
+    "build": "echo 'Pas de build nécessaire'"
+  },
+  "author": "Shark",
+  "license": "MIT"
+}
