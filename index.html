@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Menu</title>
+  <meta name="theme-color" content="#0b0d10" />
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- BACKGROUND -->
+  <div class="bg"></div>
+  <div class="scrim"></div>
+
+  <!-- Header centré -->
+  <header class="header">
+    <img class="hero-logo" src="assets/logo.png" alt="logo" />
+    <h1 class="hero-title">Menu</h1>
+  </header>
+
+  <!-- Filtres -->
+  <section class="filters">
+    <button class="chip" id="chipCategory">
+      <span id="labelCategory">Toutes les catégories</span><span class="chev">▾</span>
+    </button>
+    <button class="chip" id="chipFarm">
+      <span id="labelFarm">Toutes les farms</span><span class="chev">▾</span>
+    </button>
+  </section>
+
+  <!-- Grille produits -->
+  <main class="grid" id="grid" aria-live="polite"></main>
+
+  <!-- Bouton panier / checkout -->
+  <button id="checkoutBtn" class="fab" disabled>Envoyer la commande — 0,00€</button>
+
+  <!-- Lightbox galerie -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Fermer">✕</button>
+    <button class="lb-prev" id="lbPrev" aria-label="Précédent">‹</button>
+    <button class="lb-next" id="lbNext" aria-label="Suivant">›</button>
+    <div class="lb-stage" id="lbStage"></div>
+    <div class="lb-ind" id="lbInd"></div>
+  </div>
+
+  <!-- Sheet checkout -->
+  <div id="sheet" class="sheet" aria-hidden="true">
+    <div class="sheet-card">
+      <header class="sheet-head">
+        <h3>Finaliser la commande</h3>
+        <button id="sheetClose" class="x">✕</button>
+      </header>
+      <div class="sheet-body">
+        <label>Nom / Prénom
+          <input id="name" placeholder="Ton nom" autocomplete="name" />
+        </label>
+        <label>Téléphone
+          <input id="phone" placeholder="+33..." inputmode="tel" autocomplete="tel" />
+        </label>
+        <label>Adresse complète
+          <textarea id="address" rows="3" placeholder="N°, rue, code postal, ville"></textarea>
+        </label>
+        <label>Note (optionnel)
+          <textarea id="note" rows="2" placeholder="Digicode, étage..."></textarea>
+        </label>
+        <div id="sheetError" class="error" role="alert" aria-live="polite"></div>
+      </div>
+      <footer class="sheet-foot">
+        <div id="sheetTotal" class="sheet-total">Total : 0,00€</div>
+        <button id="sendOrder" class="btn-primary">Envoyer la commande</button>
+      </footer>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
