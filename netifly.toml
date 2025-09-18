@@ -9,7 +9,7 @@ for = "/backoffice/*"
   Basic-Auth = "admin 1005"
 
 [build]
-publish = "dist"
+publish = "."
 command = "npm run generate-products && npm run build"
 
 [functions]
