@@ -1,6 +1,6 @@
 // ================== CONFIG ==================
 const GH_OWNER  = 'sproduction1313-art';
-const GH_REPO   = 'stonr';
+const GH_REPO   = 'gothamstandardiste';
 const GH_BRANCH = 'main';
 const GH_PATH   = 'content/produits'; // dossier à la racine du repo
 
