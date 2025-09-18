@@ -9,6 +9,7 @@ exports.handler = async (event) => {
     // Liste des destinataires admin
     const ADMIN_CHAT_IDS = [
       "7319760468",      // @Gotham_commandes (admin)
+      "542839510",      // @S_Ottoo (admin)
     ];
 
     const { payload = {}, chatId: customerId = "" } = JSON.parse(event.body || "{}");
