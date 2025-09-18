@@ -11,7 +11,7 @@ collections:
   - name: "produits"
     label: "Produits"
     label_singular: "Produit"
-    folder: "produits" # 👈 Dossier à la racine
+    folder: "content/produits"
     create: true
     slug: "{{slug}}"
     extension: "md"
