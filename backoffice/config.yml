@@ -8,20 +8,21 @@ public_folder: "/assets/uploads"
 publish_mode: simple
 
 collections:
-  - name: "products"
+  - name: "produits"
     label: "Produits"
-    file: "data/products.json"
+    label_singular: "Produit"
+    folder: "produits" # 👈 Dossier à la racine
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    summary: "{{title}} – {{price}}€"
     fields:
-      - label: "Produits"
-        name: "items"
-        widget: "list"
-        summary: "{{fields.name}} – {{fields.price}}€"
-        fields:
-          - { label: "Nom", name: "name", widget: "string" }
-          - { label: "Prix (€)", name: "price", widget: "number", value_type: "float", min: 0, step: 0.01 }
-          - { label: "Description", name: "description", widget: "text", required: false }
-          - { label: "Image (URL)", name: "image", widget: "string", required: false }
-          - { label: "Vidéo (URL .mp4)", name: "video", widget: "string", required: false }
-          - { label: "Badge", name: "badge", widget: "string", required: false }
-          - { label: "Ordre", name: "order", widget: "number", value_type: "int", min: 0, default: 0 }
-          - { label: "Publié ?", name: "published", widget: "boolean", default: true }
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Prix (€)", name: "price", widget: "number", value_type: "float", min: 0, step: 0.01 }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Image (16:9)", name: "image", widget: "image", required: true }
+      - { label: "Vidéo (URL .mp4)", name: "video", widget: "string", required: false }
+      - { label: "Badge (ex: Nouveau, Best)", name: "badge", widget: "string", required: false }
+      - { label: "Ordre (tri ascendant)", name: "order", widget: "number", value_type: "int", min: 0, default: 0 }
+      - { label: "Publié ?", name: "published", widget: "boolean", default: true }
