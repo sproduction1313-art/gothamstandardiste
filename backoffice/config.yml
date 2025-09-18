@@ -8,29 +8,8 @@ public_folder: "/assets/uploads"
 publish_mode: simple
 
 collections:
-  # Produits en fichiers Markdown
-  - name: "produits"
+  - name: "products"
     label: "Produits"
-    label_singular: "Produit"
-    folder: "content/produits"
-    create: true
-    slug: "{{slug}}"
-    extension: "md"
-    format: "frontmatter"
-    summary: "{{title}} – {{price}}€"
-    fields:
-      - { label: "Titre", name: "title", widget: "string" }
-      - { label: "Prix (€)", name: "price", widget: "number", value_type: "float", min: 0, step: 0.01 }
-      - { label: "Description", name: "description", widget: "text", required: false }
-      - { label: "Image (16:9)", name: "image", widget: "image", required: true }
-      - { label: "Vidéo (URL .mp4)", name: "video", widget: "string", required: false }
-      - { label: "Badge (ex: Nouveau, Best)", name: "badge", widget: "string", required: false }
-      - { label: "Ordre (tri ascendant)", name: "order", widget: "number", value_type: "int", min: 0, default: 0 }
-      - { label: "Publié ?", name: "published", widget: "boolean", default: true }
-
-  # Produits en JSON
-  - name: "products_json"
-    label: "Produits JSON"
     file: "data/products.json"
     fields:
       - label: "Produits"
@@ -41,7 +20,8 @@ collections:
           - { label: "Nom", name: "name", widget: "string" }
           - { label: "Prix (€)", name: "price", widget: "number", value_type: "float", min: 0, step: 0.01 }
           - { label: "Description", name: "description", widget: "text", required: false }
-          - { label: "Image", name: "image", widget: "string", required: false }
+          - { label: "Image (URL)", name: "image", widget: "string", required: false }
+          - { label: "Vidéo (URL .mp4)", name: "video", widget: "string", required: false }
           - { label: "Badge", name: "badge", widget: "string", required: false }
           - { label: "Ordre", name: "order", widget: "number", value_type: "int", min: 0, default: 0 }
           - { label: "Publié ?", name: "published", widget: "boolean", default: true }
